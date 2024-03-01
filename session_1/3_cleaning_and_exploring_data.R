@@ -1,5 +1,5 @@
 ###R for biologists
-##Irina & Rao, 23/01/2024
+##Irina & Bea, 26/03/2024
 
 
 #### Cleaning data ####
@@ -44,17 +44,15 @@ migmorph[which_rows_mig1 | which_rows_elongatedness1.5, ]
 #### Problem set ####
 # Use the migmorph data.frame for these questions
 
-# Q1: Knockdown of which gene results in the highest migration?
+#Q1: Knockdown of which gene results in the highest migration?
 # # hint: this can be accomplished with the max() function
-highest_mig <- max(migmorph$migration)
-migmorph[migmorph$migration == highest_mig, "gene_symbol"]
-#alternatively
-migmorph[which.max(migmorph$migration), ]$gene_symbol
-# Q2: Make a new data.frame that has only rows with 0.9 > migration > 0.4 AND elongatedness > 1.4
-# Q2.1: What is the correlation between migration and elongatedness in this new dataset?
-# Q2.2: Draw an XY plot showing the relationship between these two variables in this new dataset
-migration_filter <- (migmorph$migration < 0.9) & (migmorph$migration > 0.4)
-morphology_filter <- migmorph$elongatedness > 1.4
-migmorph_filtered <- migmorph[(migration_filter & morphology_filter), ]
-# Q3: Write the data.frame from Q2 to a new file named filtered_data.csv
-write.csv(x = migmorph_filtered, file = "/Users/srao/Downloads/filtered_data.csv")
+#Q2: Rename the columns of the migmorph dataframe by adding the suffix "_new" to all of them
+#Q3: Find out the migration and elongatedness values for the JUN gene.
+#Q4: Is the migration value for the TNFRSF1B gene less than the migration value for the RET gene?
+#Q5: Find out the mean of the elongatedness column; create a new column called "elongatedness_centred" in migmorph by dividing the elongatedness values by the mean elongatedness
+#Q6: Make a new data.frame that has only rows with 0.9 > migration > 0.4 AND elongatedness > 1.4
+#Q6.1: What is the correlation between migration and elongatedness in this new dataset?
+#Q6.2: Draw an XY plot showing the relationship between these two variables in this new dataset
+#Q7: Write the data.frame from Q6 to a new file named filtered_data.csv
+
+
